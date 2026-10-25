@@ -36,6 +36,19 @@ ng build
 
 This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
 
+## Deploying to Cloudflare Workers
+
+The Wrangler configuration serves the Angular browser build from `dist/marba/browser` and falls back to `index.html` for client-side routes.
+
+Build and deploy with:
+
+```bash
+npm run build
+npx wrangler deploy
+```
+
+The build must run before deployment so that the configured assets directory exists and contains `index.html`.
+
 ## Running unit tests
 
 To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
