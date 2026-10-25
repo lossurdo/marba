@@ -43,6 +43,14 @@ export class App {
     input.value = quantity;
   }
 
+  protected clearItems(): void {
+    this.items.set([
+      { id: 1, priceDigits: '', quantity: '' },
+      { id: 2, priceDigits: '', quantity: '' },
+      { id: 3, priceDigits: '', quantity: '' },
+    ]);
+  }
+
   protected priceValue(item: ComparisonItem): string {
     return this.formatPrice(item.priceDigits);
   }

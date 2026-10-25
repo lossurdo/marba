@@ -8,7 +8,11 @@
 .intro { display: flex; align-items: end; justify-content: space-between; margin-bottom: 28px; }
 .eyebrow { margin: 0 0 9px; color: var(--accent); font-size: .68rem; font-weight: 800; letter-spacing: .17em; }
 h1 { margin: 0; color: var(--ink); font-size: clamp(1.7rem, 5vw, 2.55rem); font-weight: 650; letter-spacing: -.055em; }
-.intro-icon { display: grid; width: 42px; height: 42px; place-items: center; border: 1px solid var(--line); border-radius: 50%; color: var(--accent); font-size: 1.3rem; }
+.intro-icon { display: grid; flex: 0 0 42px; width: 42px; height: 42px; place-items: center; padding: 10px; border: 1px solid var(--line); border-radius: 50%; color: var(--accent); background: var(--surface); cursor: pointer; transition: background-color .15s, border-color .15s, transform .15s; }
+.intro-icon:hover { border-color: var(--accent); background: var(--badge-bg); }
+.intro-icon:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+.intro-icon:active { transform: scale(.94); }
+.intro-icon svg { width: 100%; height: 100%; }
 .items-list { display: grid; gap: 15px; }
 .item-card { --card-accent: #548f82; padding: 26px 28px 24px; border: 1px solid var(--line); border-left: 7px solid var(--card-accent); border-radius: 15px; background: var(--surface); box-shadow: 0 9px 26px rgb(28 39 38 / 8%); transition: border-color .2s, transform .2s, box-shadow .2s; }
 .card-two { --card-accent: #bd8960; }
