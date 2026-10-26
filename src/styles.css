@@ -1,42 +1,25 @@
 @import 'tailwindcss';
 
 :root {
-  color-scheme: light dark;
-  --page: #f6f7f3;
-  --surface: #fff;
-  --ink: #202724;
-  --muted: #737d77;
-  --placeholder: #a1aaa4;
-  --line: #e7ebe6;
-  --line-strong: #cbd3cd;
-  --accent: #286a5c;
-  --subtle: #f0f2ef;
-  --badge-bg: #e3f2e8;
-  --badge-ink: #277347;
-  --higher-bg: #fde9e7;
-  --higher-ink: #a9342b;
-  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color-scheme: light;
+  --page: #f4f0e8;
+  --surface: #fffdf8;
+  --ink: #203b36;
+  --muted: #70807a;
+  --placeholder: #a2afa8;
+  --line: #e2dfd5;
+  --line-strong: #bdc8bf;
+  --accent: #c85b3d;
+  --subtle: #edf1eb;
+  --badge-bg: #e0f0e4;
+  --badge-ink: #216b4d;
+  --higher-bg: #f9e8e1;
+  --higher-ink: #ad4a34;
+  font-family: "Avenir Next", "Trebuchet MS", ui-sans-serif, sans-serif;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-@media (prefers-color-scheme: dark) {
-  :root {
-    --page: #121715;
-    --surface: #1b211e;
-    --ink: #eef2ef;
-    --muted: #a2aea6;
-    --placeholder: #758078;
-    --line: #303a34;
-    --line-strong: #536057;
-    --accent: #8dc7b5;
-    --subtle: #29312c;
-    --badge-bg: #244633;
-    --badge-ink: #b6ebc8;
-    --higher-bg: #4a2827;
-    --higher-ink: #ffaaa2;
-  }
 }
 * { box-sizing: border-box; }
 html { min-width: 320px; min-height: 100%; background: var(--page); }
