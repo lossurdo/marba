@@ -66,7 +66,12 @@ export class App {
   }
 
   protected formatCurrency(value: number): string {
-    return new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(value);
+    return new Intl.NumberFormat('pt-BR', {
+      style: 'currency',
+      currency: 'BRL',
+      minimumFractionDigits: 4,
+      maximumFractionDigits: 4,
+    }).format(value);
   }
 
   private formatPrice(digits: string): string {
