@@ -53,5 +53,6 @@ input::placeholder { color: var(--placeholder); opacity: 1; }
   .item-card { padding: 19px 18px 17px; border-left-width: 6px; border-radius: 13px; }
   .fields-row { gap: 14px; }
   .card-topline { margin-bottom: 14px; }
+  .equivalent-price { width: 100%; margin-left: 0; }
 }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition-duration: .01ms !important; } }
