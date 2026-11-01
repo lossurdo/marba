@@ -29,6 +29,11 @@ export class App {
     return comparable.length >= 2 ? Math.min(...comparable.map((item) => item.unitPrice)) : null;
   });
 
+  protected readonly highestQuantity = computed(() => {
+    const comparable = this.completeItems();
+    return comparable.length >= 2 ? Math.max(...comparable.map((item) => Number(item.quantity))) : null;
+  });
+
   protected onPriceInput(id: number, event: Event): void {
     const input = event.target as HTMLInputElement;
     const digits = input.value.replace(/\D/g, '').slice(0, 12);
@@ -65,12 +70,33 @@ export class App {
     return this.bestUnitPrice() !== null && unitPrice !== null && Math.abs(unitPrice - this.bestUnitPrice()!) < 0.0000001;
   }
 
+  protected isMoreExpensive(item: ComparisonItem): boolean {
+    const unitPrice = this.unitPrice(item);
+    return this.bestUnitPrice() !== null && unitPrice !== null && unitPrice - this.bestUnitPrice()! > 0.0000001;
+  }
+
+  protected equivalentPrice(item: ComparisonItem): number | null {
+    const unitPrice = this.unitPrice(item);
+    const highestQuantity = this.highestQuantity();
+    if (!this.isMoreExpensive(item) || unitPrice === null || highestQuantity === null) return null;
+    return highestQuantity * unitPrice;
+  }
+
   protected formatCurrency(value: number): string {
     return new Intl.NumberFormat('pt-BR', {
       style: 'currency',
       currency: 'BRL',
       minimumFractionDigits: 4,
       maximumFractionDigits: 4,
+    }).format(value);
+  }
+
+  protected formatEquivalentPrice(value: number): string {
+    return new Intl.NumberFormat('pt-BR', {
+      style: 'currency',
+      currency: 'BRL',
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
     }).format(value);
   }
 

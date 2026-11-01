@@ -14,8 +14,8 @@
       </button>
     </div>
     <div class="items-list">
-      @for (item of items(); track item.id; let index = $index) {
-        <article class="item-card" [class.is-best]="isBest(item)" [class.card-one]="index === 0" [class.card-two]="index === 1" [class.card-three]="index === 2">
+      @for (item of items(); track item.id) {
+        <article class="item-card" [class.is-best]="isBest(item)" [class.is-most-expensive]="isMoreExpensive(item)">
           <div class="card-topline">
             <div class="item-heading"><span class="item-index">0{{ item.id }}</span><h2>Produto {{ item.id }}</h2></div>
             @if (isBest(item)) { <span class="best-badge"><span aria-hidden="true">✦</span> Melhor preço</span> }
@@ -32,7 +32,10 @@
             </label>
           </div>
           <div class="card-result" aria-live="polite">
-            @if (unitPrice(item) !== null) { <span class="result-label">Preço por unidade</span><strong>{{ formatCurrency(unitPrice(item)!) }} <span>/ unidade</span></strong> }
+            @let equivalent = equivalentPrice(item);
+            @if (unitPrice(item) !== null) { <span class="result-label">Preço por unidade</span><strong>{{ formatCurrency(unitPrice(item)!) }} <span>/ unidade</span></strong>
+              @if (equivalent !== null) { <span class="equivalent-price"><span class="result-label">Preço equivalente:</span><strong>{{ formatEquivalentPrice(equivalent) }}</strong></span> }
+            }
             @else { <span class="result-hint">Preencha preço e quantidade para comparar</span> }
           </div>
         </article>
