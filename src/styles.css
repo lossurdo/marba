@@ -2,20 +2,19 @@
 
 :root {
   color-scheme: light;
-  --page: #f4f0e8;
-  --surface: #fffdf8;
-  --ink: #203b36;
-  --muted: #70807a;
-  --placeholder: #a2afa8;
-  --line: #e2dfd5;
-  --line-strong: #bdc8bf;
-  --accent: #c85b3d;
-  --subtle: #edf1eb;
-  --badge-bg: #e0f0e4;
-  --badge-ink: #216b4d;
-  --higher-bg: #f9e8e1;
-  --higher-ink: #ad4a34;
-  font-family: "Avenir Next", "Trebuchet MS", ui-sans-serif, sans-serif;
+  --page: #f2f2f7;
+  --surface: #ffffff;
+  --ink: #1c1c1e;
+  --muted: #6c6c70;
+  --placeholder: #aeaeb2;
+  --line: #c6c6c8;
+  --line-strong: #c7c7cc;
+  --accent: #a84932;
+  --badge-bg: #dff3e6;
+  --badge-ink: #177445;
+  --higher-bg: #fce6e1;
+  --higher-ink: #b33d2e;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;

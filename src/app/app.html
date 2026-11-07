@@ -1,24 +1,23 @@
 <main class="page-shell">
   <header class="site-header">
     <a class="brand" href="/" aria-label="MARBA início">MARBA<span>.</span></a>
-    <p class="tagline">Compare. Escolha consciente.</p>
   </header>
   <section class="comparison" aria-labelledby="page-title">
     <div class="intro">
-      <div><p class="eyebrow">COMPARADOR DE PREÇOS</p><h1 id="page-title">Qual vale mais a pena?</h1></div>
-      <button class="intro-icon" type="button" aria-label="Limpar dados e começar novamente" title="Limpar dados e começar novamente" (click)="clearItems()">
+      <div><h1 id="page-title">Compare preços</h1><p class="intro-copy">Informe o preço e a quantidade para descobrir a melhor compra.</p></div>
+      <button class="clear-button" type="button" aria-label="Limpar dados e começar novamente" title="Limpar dados e começar novamente" (click)="clearItems()">
         <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="m7.5 20-4-4a2.12 2.12 0 0 1 0-3l8.8-8.8a2.12 2.12 0 0 1 3 0l5 5a2.12 2.12 0 0 1 0 3L12.5 20h-5Z" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
-          <path d="m8 8 8 8M12.5 20H21" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M6 6.5h12M9 6.5V5.25c0-.69.56-1.25 1.25-1.25h3.5c.69 0 1.25.56 1.25 1.25V6.5m2 0-.72 12.05A1.5 1.5 0 0 1 14.78 20H9.22a1.5 1.5 0 0 1-1.5-1.45L7 6.5m3.5 3.25v6.5m3-6.5v6.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
       </button>
     </div>
-    <div class="items-list">
+    <p class="section-label">Produtos</p>
+    <div class="items-list" role="list">
       @for (item of items(); track item.id) {
-        <article class="item-card" [class.is-best]="isBest(item)" [class.is-most-expensive]="isMoreExpensive(item)">
+        <article class="item-card" role="listitem" [class.is-best]="isBest(item)" [class.is-most-expensive]="isMoreExpensive(item)">
           <div class="card-topline">
-            <div class="item-heading"><span class="item-index">0{{ item.id }}</span><h2>Produto {{ item.id }}</h2></div>
-            @if (isBest(item)) { <span class="best-badge"><span aria-hidden="true">✦</span> Melhor preço</span> }
+            <div class="item-heading"><span class="item-index" aria-hidden="true">{{ item.id }}</span><h2>Produto {{ item.id }}</h2></div>
+            @if (isBest(item)) { <span class="best-badge">Melhor preço</span> }
             @else if (bestUnitPrice() !== null && unitPrice(item) !== null) { <span class="higher-badge">Preço maior</span> }
           </div>
           <div class="fields-row">
@@ -41,6 +40,9 @@
         </article>
       }
     </div>
-    <footer class="page-footer">Faça a escolha <span class="footer-quote">“MARBArata”</span> <span class="wink" role="img" aria-label="piscadela">😉</span></footer>
+    <footer class="page-footer">Faça a escolha <span class="footer-quote">“MARBArata”</span>
+      &nbsp;
+      <span class="wink" role="img" aria-label="piscadela">😉</span>
+    </footer>
   </section>
 </main>
