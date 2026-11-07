@@ -32,7 +32,6 @@ h1 { margin: 0; color: var(--ink); font-size: clamp(2rem, 7vw, 2.35rem); font-we
 .clear-button:active { opacity: .55; }
 .clear-button:focus-visible { outline-color: var(--accent); }
 
-.section-label { margin: 0 0 7px 16px; color: var(--muted); font-size: .8rem; font-weight: 400; }
 .items-list { overflow: hidden; border: 1px solid var(--outer-separator); border-radius: 11px; background: var(--surface); box-shadow: 0 1px 1px rgb(0 0 0 / 12%); }
 
 .item-card { --card-accent: var(--accent); position: relative; padding: 16px; background: var(--surface); }

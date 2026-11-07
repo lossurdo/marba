@@ -18,6 +18,10 @@ export class App {
     { id: 3, priceDigits: '', quantity: '' },
   ]);
 
+  protected readonly hasValues = computed(() =>
+    this.items().some((item) => item.priceDigits.length > 0 || item.quantity.length > 0),
+  );
+
   protected readonly completeItems = computed(() =>
     this.items()
       .filter((item) => item.priceDigits.length > 0 && item.quantity.length > 0 && Number(item.quantity) > 0)
